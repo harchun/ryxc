@@ -190,14 +190,14 @@ function calculate(){
 
   // 包廂費判定
   let roomFee = 0;
-  if (people <= 4) roomFee = 1500;
-  else if (people <= 7) roomFee = 2000;
-  else if (people <= 9) roomFee = 2500;
-  else roomFee = 3000;
+  if (people <= 4) roomFee = 2000;
+  else if (people <= 7) roomFee = 2500;
+  else if (people <= 9) roomFee = 3000;
+  else roomFee = 3500;
 
   // 公關檯費（鎖台 or 坐一轉 二擇一）
   let publicRate = 1320; // 預設正常價
-  if (isLocked) publicRate = 2160;
+  if (isLocked) publicRate = 2400;
   else if (isSit) publicRate = 2640;
 
   const publicFee = people * publicRate * hours;
@@ -223,5 +223,6 @@ peopleInput.addEventListener('input', calculate);
 hoursInput.addEventListener('input', calculate);
 calculate();
 </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"94d44dd91e4b4b309fa1e8f43312772f","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
